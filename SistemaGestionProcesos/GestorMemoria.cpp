@@ -32,8 +32,19 @@ void liberarMemoria() {
 void mostrarMemoria() {
     BloqueMemoria* temp = cima;
     cout << "\n--- Pila de Memoria ---\n";
+
+    if (temp == NULL) {
+        cout << "La memoria está vacía.\n";
+        return;
+    }
+
     while (temp != NULL) {
-        cout << "Proceso: " << temp->idProceso << ", Tamaño: " << temp->tam << endl;
+        Proceso* p = buscarProcesoPorID(temp->idProceso);
+        if (p != NULL) {
+            cout << "Proceso: " << p->nombre << " (ID: " << p->id << "), Tamaño: " << temp->tam << " KB\n";
+        } else {
+            cout << "Proceso desconocido (ID: " << temp->idProceso << "), Tamaño: " << temp->tam << " KB\n";
+        }
         temp = temp->siguiente;
     }
 }
