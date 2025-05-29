@@ -42,15 +42,3 @@ void encolarDesdeLista() {
     if (p != NULL) encolar(*p);
     else cout << "Proceso no encontrado.\n";
 }
-void buscarYMostrarProceso() {
-    int id;
-    cout << "Ingrese el ID del proceso a buscar: ";
-    cin >> id;
-    Proceso* p = buscarProcesoPorID(id);
-    if (p != NULL) {
-        cout << "Proceso encontrado:\n";
-        cout << "ID: " << p->id << ", Nombre: " << p->nombre << ", Prioridad: " << p->prioridad << endl;
-    } else {
-        cout << "Proceso no encontrado.\n";
-    }
-}
