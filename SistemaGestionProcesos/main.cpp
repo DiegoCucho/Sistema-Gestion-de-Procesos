@@ -5,6 +5,7 @@
 using namespace std;
 
 void menu() {
+    setlocale(LC_ALL, "Spanish");
     int opcion;
     do {
         cout << "\n--- Sistema de Gestión de Procesos ---\n";
